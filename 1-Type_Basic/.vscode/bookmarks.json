@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"path": "src/index.ts",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": "1 - Data Type Basic"
+				},
+				{
+					"line": 25,
+					"column": 0,
+					"label": "2 - Arrays & Objects"
+				},
+				{
+					"line": 55,
+					"column": 0,
+					"label": "3 - Functions"
+				}
+			]
+		}
+	]
+}
