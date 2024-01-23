@@ -19,9 +19,19 @@
 					"label": "3 - Functions"
 				},
 				{
-					"line": 103,
+					"line": 102,
 					"column": 0,
 					"label": "Any Type"
+				},
+				{
+					"line": 122,
+					"column": 0,
+					"label": "Tuples"
+				},
+				{
+					"line": 146,
+					"column": 0,
+					"label": "Interface"
 				}
 			]
 		}

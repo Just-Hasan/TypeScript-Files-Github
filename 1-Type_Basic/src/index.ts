@@ -99,7 +99,6 @@ const hasan: Student = {
 };
 
 console.log(hasan);
-*/
 
 /////////////////////////////////////[Any Type]
 
@@ -120,3 +119,108 @@ const resultTwo = add(3);
 
 console.log(resultOne);
 console.log(resultTwo);
+
+/////////////////////////////////////[Tuple]
+let person: [string, number, boolean] = ["Hello", 7, true];
+let person2: any[] = ["Hello", 7, false];
+
+let hsla: [number, string, string, number];
+hsla = [200, "100%", "50%", 1];
+
+let xy: [number, number];
+xy = [94.7, 94.1];
+
+function useCoords(): [number, number] {
+  const lat = 100;
+  const long = 50;
+  return [lat, long];
+}
+
+const [lat, long] = useCoords();
+
+// Named Tuples
+
+let user: [name: string, age: number];
+user = ["Peach", 23];
+console.log(user[0]);
+
+/////////////////////////////////////[Interface]
+interface Author {
+  name: string;
+  avatar: string;
+}
+
+const author1: Author = { name: "Hasan", avatar: "image/hasan.png" };
+
+interface Post {
+  title: string;
+  body: string;
+  tags: string[];
+  createAt: Date;
+  author: Author;
+}
+
+const creator1: Post = {
+  title: "My First Post",
+  body: "Siu",
+  tags: ["gaming", "tech"],
+  createAt: new Date(),
+  author: { name: "Syarifah Fadlun", avatar: "alun.png" },
+};
+const creator2: Post = {
+  title: "ReactJS is the best JavaScript framework",
+  body: "ReactJS is a UI Library developed by Facebook that allows us to build UI based on components",
+  tags: ["reactjs", "tech"],
+  createAt: new Date(),
+  author: { name: "Hasan Basri", avatar: "hasan.png" },
+};
+
+// Interface as argument type
+function createPost(post: Post) {
+  console.log(`Created post ${post.title} by ${post.author.name}`);
+}
+
+createPost(creator1);
+
+// Interface with array
+const posts: Post[] = [creator1, creator2];
+console.log(posts);
+*/
+
+/////////////////////////////////////[Type]
+type Rgb = [number, number, number];
+
+function getRandomRGB(): Rgb {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return [r, g, b];
+}
+const colorOne = getRandomRGB();
+const [red, green, blue] = getRandomRGB();
+
+// Object Literal
+type User = {
+  name: string;
+  score: number;
+};
+
+const userOne: User = { name: "Hasan", score: 7 };
+const testName = "Ronaldo";
+console.log(testName.endsWith("o"));
+function formatUser(user: User): void {
+  const { name, score } = user;
+  console.log(`${name} got ${score}`);
+}
+formatUser(userOne);
+/////////////////////////////////////[Test]
+// // test
+// interface Student {
+//   name: string;
+//   age: number;
+// }
+// const student1: Student = { name: "Hasan", age: 20 };
+// const student2: Student = { name: "Alun", age: 21 };
+// const student3: Student = { name: "Sara", age: 22 };
+// const user3: any[] = [student1, student2, student3];
+// user3.forEach((user) => console.log(user.name));
