@@ -4,19 +4,24 @@
 			"path": "src/index.ts",
 			"bookmarks": [
 				{
-					"line": 0,
+					"line": 1,
 					"column": 0,
 					"label": "1 - Data Type Basic"
 				},
 				{
-					"line": 25,
+					"line": 26,
 					"column": 0,
 					"label": "2 - Arrays & Objects"
 				},
 				{
-					"line": 55,
+					"line": 56,
 					"column": 0,
 					"label": "3 - Functions"
+				},
+				{
+					"line": 103,
+					"column": 0,
+					"label": "Any Type"
 				}
 			]
 		}

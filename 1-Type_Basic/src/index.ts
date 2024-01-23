@@ -1,3 +1,4 @@
+/*
 /////////////////////////////////////[1 - Data Type Basic]
 let age: number = 30;
 let firstName: string = "Hasan";
@@ -78,3 +79,44 @@ function formatGreeting(name: string, greeting: string) {
 }
 
 console.log(formatGreeting("Violet", "Hello"));
+
+function maxMin(numArray: number[]): number[] {
+  return [Math.max(...numArray), Math.min(...numArray)];
+}
+
+console.log(maxMin([12, 77, 99, 1, 3, 5, 10]));
+
+interface Student {
+  name: string;
+  age: number;
+  address: string;
+}
+
+const hasan: Student = {
+  name: "Hasan Basri",
+  age: new Date().getFullYear() - 2003,
+  address: "Jln. HKSN Gg. Swadayatani RT. 10 RW. 01",
+};
+
+console.log(hasan);
+*/
+
+/////////////////////////////////////[Any Type]
+
+// Normal Variable
+let age: any;
+let title; //If we don't specify any type, TS would infere it to be an 'any' type
+
+// Arrays
+const ages: any[] = ["hELLO"];
+
+// Function
+function add(value: any): number {
+  return value + value;
+}
+
+const resultOne = add("Hello");
+const resultTwo = add(3);
+
+console.log(resultOne);
+console.log(resultTwo);
