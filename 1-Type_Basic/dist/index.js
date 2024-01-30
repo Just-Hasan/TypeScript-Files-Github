@@ -186,23 +186,85 @@ createPost(creator1);
 // Interface with array
 const posts: Post[] = [creator1, creator2];
 console.log(posts);
-*/
-function getRandomRGB() {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return [r, g, b];
+
+/////////////////////////////////////[Type]
+type Rgb = [number, number, number];
+
+function getRandomRGB(): Rgb {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return [r, g, b];
 }
 const colorOne = getRandomRGB();
 const [red, green, blue] = getRandomRGB();
-const userOne = { name: "Hasan", score: 7 };
+
+// Object Literal
+type User = {
+  name: string;
+  score: number;
+};
+
+const userOne: User = { name: "Hasan", score: 7 };
 const testName = "Ronaldo";
 console.log(testName.endsWith("o"));
-function formatUser(user) {
-    const { name, score } = user;
-    console.log(`${name} got ${score}`);
+function formatUser(user: User): void {
+  const { name, score } = user;
+  console.log(`${name} got ${score}`);
 }
 formatUser(userOne);
+
+*/
+/////////////////////////////////////[Union Type & Type Guard]
+let someId;
+someId = 1;
+someId = "2";
+let email = null;
+email = "hasan@gmail.com";
+email = null;
+let anotherId;
+anotherId = "212";
+anotherId = 212;
+// When we have a function that receives params with union type which also returns union type
+// When we wanna use methods, typescript somehow confuse, cuz it's ambiguitious that it receives
+// 2 types of param
+// THIS CAN BE SETTLED BY typeGuards
+// So typeguard is basically only using typeof to determine what type does the param have
+function swapId(id) {
+    if (typeof id === "string") {
+        // we can use string method
+        return Number(id);
+    }
+    else if (typeof id === "number") {
+        // We can use number method
+        return id.toString();
+    }
+}
+console.log(swapId("1"));
+console.log(swapId(2));
+const user1 = {
+    address: "Jln.HKSN",
+    email: "Hasan@gmail.com",
+    id: 77,
+    type: "user",
+    username: "Hasan77",
+};
+const person1 = {
+    address: "Samarinda",
+    age: 21,
+    firstname: "Syarifah",
+    id: 7,
+    type: "person",
+};
+function logDetails(value) {
+    if (value.type === "user") {
+        return `Hai i'm ${value.username} and my email is ${value.email}`;
+    }
+    else if (value.type === "person") {
+        return `Hai i'm ${value.firstname} and i'm ${value.age}`;
+    }
+}
+console.log(logDetails(user1));
 /////////////////////////////////////[Test]
 // // test
 // interface Student {

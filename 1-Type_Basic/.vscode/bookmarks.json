@@ -32,6 +32,16 @@
 					"line": 146,
 					"column": 0,
 					"label": "Interface"
+				},
+				{
+					"line": 188,
+					"column": 0,
+					"label": "Type"
+				},
+				{
+					"line": 217,
+					"column": 0,
+					"label": "Union Type"
 				}
 			]
 		}

@@ -185,7 +185,6 @@ createPost(creator1);
 // Interface with array
 const posts: Post[] = [creator1, creator2];
 console.log(posts);
-*/
 
 /////////////////////////////////////[Type]
 type Rgb = [number, number, number];
@@ -213,6 +212,85 @@ function formatUser(user: User): void {
   console.log(`${name} got ${score}`);
 }
 formatUser(userOne);
+
+*/
+
+/////////////////////////////////////[Union Type & Type Guard]
+let someId: number | string;
+
+someId = 1;
+someId = "2";
+
+let email: string | null = null;
+email = "hasan@gmail.com";
+email = null;
+
+type Id = number | string;
+let anotherId: Id;
+anotherId = "212";
+anotherId = 212;
+
+// When we have a function that receives params with union type which also returns union type
+// When we wanna use methods, typescript somehow confuse, cuz it's ambiguitious that it receives
+// 2 types of param
+// THIS CAN BE SETTLED BY typeGuards
+// So typeguard is basically only using typeof to determine what type does the param have
+function swapId(id: Id) {
+  if (typeof id === "string") {
+    // we can use string method
+    return Number(id);
+  } else if (typeof id === "number") {
+    // We can use number method
+    return id.toString();
+  }
+}
+
+console.log(swapId("1"));
+console.log(swapId(2));
+
+/////////////////////////////////////[tagged interfaces]
+interface User {
+  type: "user";
+  username: string;
+  email: string;
+  id: Id;
+  address: string;
+}
+
+interface Person {
+  type: "person";
+  firstname: string;
+  age: number;
+  id: Id;
+  address: string;
+}
+
+const user1: User = {
+  address: "Jln.HKSN",
+  email: "Hasan@gmail.com",
+  id: 77,
+  type: "user",
+  username: "Hasan77",
+};
+
+const person1: Person = {
+  address: "Samarinda",
+  age: 21,
+  firstname: "Syarifah",
+  id: 7,
+  type: "person",
+};
+
+function logDetails(value: User | Person) {
+  if (value.type === "user") {
+    return `Hai i'm ${value.username} and my email is ${value.email}`;
+  } else if (value.type === "person") {
+    return `Hai i'm ${value.firstname} and i'm ${value.age}`;
+  }
+}
+
+console.log(logDetails(user1));
+
 /////////////////////////////////////[Test]
 // // test
 // interface Student {
