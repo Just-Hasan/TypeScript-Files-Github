@@ -1,9 +1,13 @@
-function add(n1: number, n2: number) {
-  return n1 + n2;
+let userInput: unknown;
+let username: string;
+
+userInput = "5";
+if (typeof userInput === "string") {
+  username = userInput;
 }
 
-function printResult(n1: number, n2: number) {
-  console.log(`Result: ${n1 + n2}`);
+function generateError(message: string, code: number): never {
+  throw { message, errorCode: code };
 }
 
-printResult(7, 7);
+generateError("An error occured!", 666);
