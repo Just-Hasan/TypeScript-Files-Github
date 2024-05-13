@@ -1,10 +1,18 @@
 "use strict";
+let add;
+add = (a, b) => a + b;
 class Person {
     constructor(name) {
-        this.name = name;
+        if (name)
+            this.name = name;
     }
     greet(phrase) {
-        console.log(`${phrase}, I'm ${this.name}`);
+        if (this.name) {
+            console.log(`${phrase}, I'm ${this.name}`);
+        }
+        else {
+            console.log("Hi");
+        }
     }
 }
 const user1 = new Person("Violet Evergarden");

@@ -132,12 +132,96 @@ car1.printCarDetails();
 Write a TypeScript program that creates a class called Student with
 properties name and class. Implement a constructor that initializes
 these properties when a Student object is created
-*/
 
 class Student {
-  constructor(public name: string, public classroom: string) {}
+    constructor(public name: string, public classroom: string) {}
 }
 
 const mikasa = new Student("Mikasa Ackerman", "3A");
 console.log(mikasa.name);
 console.log(mikasa.classroom);
+*/
+
+/*
+/////////////////////////////////////[6]
+Write a TypeScript program that creaes a class called Student with
+properties name and roll number. Add constructor overloading to
+support multiple ways of initializing a student Object. Implement one
+constructor that takes both name and roll number as paramaters and
+another constructor that takes on name, assuming the roll number is
+unknown.
+
+interface studentProperties {
+  name: string;
+  rollNumber?: number;
+}
+
+class Student implements studentProperties {
+  name: string;
+  rollNumber?: number | undefined;
+  constructor(name: string) {
+    //   constructor(public name: string) {}
+    this.name = name;
+  }
+
+  constructor(name: string, rollNumber: number) {
+    this.name =;
+    this.rollNumber = rollNumber;
+  }
+}
+
+const hasan = new Student("Hasan", 23);
+    */
+
+/*
+/////////////////////////////////////[7]
+
+class Shape {
+    constructor(public color: string) {}
+}
+
+class Circle extends Shape {
+  radius: number;
+  constructor(color: string, radius: number) {
+    super(color);
+    this.radius = radius;
+  }
+}
+
+const circle1 = new Circle("Blue", 12);
+console.log(circle1.color);
+    */
+
+/*
+/////////////////////////////////////[8]
+class Student {
+  age: number;
+  constructor(public name: string, age: number) {
+    if (age < 0) {
+      this.age = 0;
+    } else {
+      this.age = age;
+    }
+  }
+}
+*/
+
+/*
+/////////////////////////////////////[9]
+*/
+
+class Animal {
+  constructor(public name: string, public species: string) {}
+}
+
+class Tiger extends Animal {
+  constructor(name: string, species: string) {
+    super(name, species);
+  }
+  roar() {
+    console.log(`${this.name} is roaring`);
+  }
+}
+
+const bengalTiger = new Tiger("Bengal Tiger", "cat");
+bengalTiger.roar();

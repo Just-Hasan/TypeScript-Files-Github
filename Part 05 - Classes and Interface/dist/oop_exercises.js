@@ -1,11 +1,18 @@
 "use strict";
-class Student {
-    constructor(name, classroom) {
+class Animal {
+    constructor(name, species) {
         this.name = name;
-        this.classroom = classroom;
+        this.species = species;
     }
 }
-const mikasa = new Student("Mikasa Ackerman", "3A");
-console.log(mikasa.name);
-console.log(mikasa.classroom);
+class Tiger extends Animal {
+    constructor(name, species) {
+        super(name, species);
+    }
+    roar() {
+        console.log(`${this.name} is roaring`);
+    }
+}
+const bengalTiger = new Tiger("Bengal Tiger", "cat");
+bengalTiger.roar();
 //# sourceMappingURL=oop_exercises.js.map
