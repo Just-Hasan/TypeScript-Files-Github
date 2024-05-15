@@ -208,7 +208,6 @@ class Student {
 
 /*
 /////////////////////////////////////[9]
-*/
 
 class Animal {
   constructor(public name: string, public species: string) {}
@@ -225,3 +224,71 @@ class Tiger extends Animal {
 
 const bengalTiger = new Tiger("Bengal Tiger", "cat");
 bengalTiger.roar();
+*/
+
+/*
+/////////////////////////////////////[10]
+
+abstract class Person2 {
+  constructor(public name: string, public age: number) {}
+}
+
+class Employee extends Person2 {
+  employeeId: string | number;
+  constructor(name: string, age: number, employeeId: string | number) {
+    super(name, age);
+    this.employeeId = employeeId;
+  }
+}
+
+const Hasan = new Employee("Hasan Basri", 20, 21);
+*/
+
+/*
+/////////////////////////////////////[11]
+
+class Shape {
+  constructor(public color: string) {}
+  draw() {
+    console.log("is being drawn");
+  }
+}
+
+class Circle extends Shape {
+  constructor(color: string, public shape: string) {
+    super(color);
+  }
+
+  draw(): void {
+    console.log(`a ${this.color} ${this.shape} is being drawn`);
+  }
+}
+const perfectCircle = new Circle("Violet", "Perfect Circle");
+perfectCircle.draw();
+*/
+
+/*
+/////////////////////////////////////[12]
+
+class Vehicle {
+  constructor(public make: string, public model: string) {}
+  description() {
+    console.log(`${this.make} model ${this.model}`);
+  }
+}
+
+class Car extends Vehicle {
+  constructor(make: string, model: string) {
+    super(make, model);
+  }
+}
+
+class SportsCar extends Car {
+  constructor(make: string, model: string) {
+    super(make, model);
+  }
+}
+
+const Lambhorgini = new SportsCar("Lambhorgini", "GLD7");
+Lambhorgini.description();
+*/
