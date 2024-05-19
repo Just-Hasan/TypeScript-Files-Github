@@ -278,7 +278,8 @@ class Vehicle {
 }
 
 class Car extends Vehicle {
-  constructor(make: string, model: string) {
+  d
+  constructor(mp;[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[r;[[[[[[[[[[[[[[[[[[[[[[eake: string, model: string) {
     super(make, model);
   }
 }
