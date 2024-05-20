@@ -25,7 +25,6 @@ const student: Universal = 7; // -> will have the 'number' type cuz, the 'number
 function add(a: Combinable, b: Combinable) {
   if (typeof a === "string" || typeof b === "string")
     return a.toString() + b.toString();
-
   return a + b;
 }
 
