@@ -1,9 +1,7 @@
 "use strict";
-const names = [];
-const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("This is done");
-    });
-});
-promise.then((data) => data);
+function sayHello(name, age) {
+    return `I'm ${name} and i'm ${age}`;
+}
+const greet = sayHello("Hasan", 20);
+console.log(greet);
 //# sourceMappingURL=app.js.map
