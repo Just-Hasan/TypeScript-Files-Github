@@ -1,20 +1,24 @@
 import React from "react";
-
-type todo = {
-  id: number;
-  title: string;
-};
-
+import { TodoType } from "../App";
+import "../TodoList.css";
 interface TodoListTypes {
-  todos: todo[];
+  todos: TodoType[];
+  onDeleteTodo: (todoId: number | string) => void;
 }
 
-const TodoList: React.FC<TodoListTypes> = ({ todos }) => {
+const TodoList: React.FC<TodoListTypes> = ({ todos, onDeleteTodo }) => {
+  console.log(todos);
+
   return (
     <ul>
-      {todos.map((todo) => (
-        <li key={todo.id}>{todo.title}</li>
-      ))}
+      {todos.map((todo) => {
+        return (
+          <li key={todo.id} onClick={() => onDeleteTodo(todo.id)}>
+            <span>{todo.title}</span>
+            <button>delete</button>
+          </li>
+        );
+      })}
     </ul>
   );
 };
