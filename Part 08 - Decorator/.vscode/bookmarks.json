@@ -1,0 +1,19 @@
+{
+	"files": [
+		{
+			"path": "src/app.ts",
+			"bookmarks": [
+				{
+					"line": 1,
+					"column": 0,
+					"label": "Decorator"
+				},
+				{
+					"line": 16,
+					"column": 0,
+					"label": "Decorator Factory"
+				}
+			]
+		}
+	]
+}
