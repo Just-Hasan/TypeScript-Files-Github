@@ -8,8 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+function WithTemplate(template, hookId) {
+    return function (originalConstructor) {
+        return class extends originalConstructor {
+            constructor() {
+                super();
+                const hookEl = document.getElementById(hookId);
+                const obj = new originalConstructor();
+                if (hookEl) {
+                    hookEl.innerHTML = template;
+                    hookEl.querySelector("h1").textContent = obj.name;
+                }
+            }
+        };
+    };
+}
 function PropertyDecorator(target, propertyName) {
-    console.log(`Property ${propertyName}`);
+    console.log(`Property Decorator`);
     console.log(target, propertyName);
 }
 function AccessorDecorator(target, accessorName, descriptor) {

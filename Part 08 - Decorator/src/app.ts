@@ -36,18 +36,6 @@ paramater, konsep closure diterapkan disini
 //   };
 // }
 
-// function WithTemplate(template: string, hookId: string) {
-//   return function (constructor: any) {
-//     console.log("rendering template");
-//     const hookEl = document.getElementById(hookId);
-//     const obj = new constructor();
-//     if (hookEl) {
-//       hookEl.innerHTML = template;
-//       hookEl.querySelector("h1")!.textContent = obj.name;
-//     }
-//   };
-// }
-
 // @Logger
 // @WithTemplate("<h2>Testing template</h2>", "app")
 // class Person {
@@ -61,9 +49,24 @@ paramater, konsep closure diterapkan disini
 // const person1 = new Person();
 
 // //
+function WithTemplate(template: string, hookId: string) {
+  return function (originalConstructor: any) {
+    return class extends originalConstructor {
+      constructor() {
+        super();
+        const hookEl = document.getElementById(hookId);
+        const obj = new originalConstructor();
+        if (hookEl) {
+          hookEl.innerHTML = template;
+          hookEl.querySelector("h1")!.textContent = obj.name;
+        }
+      }
+    };
+  };
+}
 
 function PropertyDecorator(target: any, propertyName: string | Symbol) {
-  console.log(`Property ${propertyName}`);
+  console.log(`Property Decorator`);
   console.log(target, propertyName);
 }
 
