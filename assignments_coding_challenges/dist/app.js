@@ -1,11 +1,32 @@
 "use strict";
-function narcissistic(value) {
-    const length = Number(String(value).length);
-    const total = String(value)
-        .split("")
-        .reduce((prev, cur) => prev + Math.pow(Number(cur), length), 0);
-    return value === total;
+const strArr = ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"];
+const k_one = [
+    "ejjjjmmtthh",
+    "zxxuueeg",
+    "aanlljrrrxx",
+    "dqqqaaabbb",
+    "oocccffuucccjjjkkkjyyyeehh",
+];
+const k = 3;
+function longestConsec(strArr, k) {
+    const conseString = [];
+    if (k === 1) {
+        const wordLengthArr = strArr.map((str) => str.length);
+        const maxWordLength = Math.max(...wordLengthArr);
+        const longestWord = strArr.find((word) => word.length === maxWordLength);
+        if (longestWord === undefined)
+            throw new Error("ERROR");
+        return longestWord;
+    }
+    const properLength = strArr.length - k;
+    for (let i = 0; i <= properLength; i++) {
+        console.log(i);
+    }
+    const maxConsecutiveString = Math.max(...conseString.map((str) => str.length));
+    const firstLongestString = conseString.find((str) => str.length === maxConsecutiveString);
+    console.log(conseString);
+    return firstLongestString;
 }
-const result = narcissistic(8);
+const result = longestConsec(strArr, 3);
 console.log(result);
 //# sourceMappingURL=app.js.map
