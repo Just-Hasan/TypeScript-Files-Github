@@ -47,16 +47,35 @@ example not narsistic
 Divide and conquer : 
 1. Know the length of the number
 2. Test each digit of that number to the power of length of the number
-*/
 
 function narcissistic(value: number): boolean {
   const length = Number(String(value).length);
   const total = String(value)
-    .split("")
-    .reduce((prev, cur) => prev + Math.pow(Number(cur), length), 0);
+  .split("")
+  .reduce((prev, cur) => prev + Math.pow(Number(cur), length), 0);
 
   return value === total;
 }
 
 const result = narcissistic(8);
 console.log(result);
+*/
+
+/*
+////////[Coding Challenges - 3 (Consecutive String)]
+
+You are given an array(list) stararr of strings
+and an integer k. Your task is to return the first
+longest string consisting of k consecutive strings
+taken in the array.
+
+Divide and conquer :
+
+*/
+
+const strArr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"];
+const k = 2;
+
+export function longestConsec(strArr: string[], k: number): string {
+  return "siiu";
+}
