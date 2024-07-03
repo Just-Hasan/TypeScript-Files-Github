@@ -80,9 +80,8 @@ Divide and conquer :
    of array minus k
    c
 
-*/
 
-const strArr = ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"];
+const strarr = ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"];
 const k_one = [
   "ejjjjmmtthh",
   "zxxuueeg",
@@ -92,22 +91,26 @@ const k_one = [
 ];
 const k = 3;
 
-function longestConsec(strArr: string[], k: number): any {
+function longestConsec(strarr: string[], k: number): any {
   const conseString: string[] = [];
   if (k === 1) {
-    const wordLengthArr = strArr.map((str) => str.length);
+    const wordLengthArr = strarr.map((str) => str.length);
     const maxWordLength = Math.max(...wordLengthArr);
-    const longestWord = strArr.find((word) => word.length === maxWordLength);
+    const longestWord = strarr.find((word) => word.length === maxWordLength);
 
     if (longestWord === undefined) throw new Error("ERROR");
 
     return longestWord;
   }
 
-  const properLength = strArr.length - k;
+  const properLength = strarr.length - k;
 
   for (let i = 0; i <= properLength; i++) {
-    console.log(i);
+    let tempString: string = "";
+    for (let j = i; j <= k + i - 1; j++) {
+      tempString += strarr[j];
+    }
+    conseString.push(tempString);
   }
   const maxConsecutiveString = Math.max(
     ...conseString.map((str) => str.length)
@@ -115,8 +118,99 @@ function longestConsec(strArr: string[], k: number): any {
   const firstLongestString = conseString.find(
     (str) => str.length === maxConsecutiveString
   );
-  console.log(conseString);
+
   return firstLongestString;
 }
-const result = longestConsec(strArr, 3);
+const result = longestConsec(strarr, k);
 console.log(result);
+*/
+
+/*
+////////[Coding Challenge - 4 (Form The Minimum)]
+const randomNumber: number[] = [1, 9, 3, 1, 7, 4, 6, 6, 7];
+const minValue = (values: number[]): number => {
+  return Number([...new Set(values)].sort().join(""));
+};
+
+const result = minValue(randomNumber);
+console.log(result);
+*/
+
+/*
+////////[Coding Challenge - 5 (Fix string case)]
+
+function solve(str: string) {
+  const uppercaseRegex = /[A-Z]/;
+  const lowercaseRegex = /[a-z]/;
+  let numUppercase: number = 0;
+  let numLowercase: number = 0;
+  const strArr = str.split("");
+  for (let i = 0; i < strArr.length; i++) {
+    if (uppercaseRegex.test(strArr[i])) {
+      numUppercase++;
+    } else if (lowercaseRegex.test(strArr[i])) {
+      numLowercase++;
+    }
+  }
+  return numUppercase <= numLowercase ? str.toLowerCase() : str.toUpperCase();
+}
+
+const result = solve("OPEn");
+console.log(result);
+*/
+
+/*
+////////[Coding Challenge - 6 Regex Test]
+Make a regex that :
+At least six characters long
+contains a lowercase letter
+contains an uppercase letter
+contains a digit
+only contains alphanumeric characters (note that '_' is not alphanumeric)
+
+const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+*/
+
+/*
+////////[Coding Challenge - 6 Multiplication Table]
+Your task, is to create NxN multiplication table, of size
+provided in paramater
+
+Divide and conquer : 
+1. If the size is 1, then return [[1]]
+2. If the size is more than one, then :
+   a. Create an empty array first
+   b. Create an array with base iteration of the size
+   c. Insert it to the result array
+   
+   function multiplicationTable(size: number): number[][] {
+    if (size === 1) return [[1]];
+    
+    const resultArray: number[][] = [];
+    for (let i = 1; i <= size; i++) {
+      const tempArray = [];
+      for (let j = i; j <= i * size; j += i) {
+        tempArray.push(j);
+      }
+      resultArray.push(tempArray);
+    }
+    
+    return resultArray;
+  }
+  
+  const result = multiplicationTable(4);
+  console.log(result);
+  */
+
+/*
+  ////////[Coding Challenges - 7 Help the bookseller]
+  */
+
+const listOfArt = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"];
+const listOfCat = ["A", "B", "C", "D"];
+
+const stockList = (listOfArr: string[], listOfCat: string[]): string => {
+  return "siu";
+};
+
+const result = stockList(listOfArt, listOfCat);

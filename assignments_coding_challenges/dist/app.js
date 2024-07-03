@@ -1,32 +1,8 @@
 "use strict";
-const strArr = ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"];
-const k_one = [
-    "ejjjjmmtthh",
-    "zxxuueeg",
-    "aanlljrrrxx",
-    "dqqqaaabbb",
-    "oocccffuucccjjjkkkjyyyeehh",
-];
-const k = 3;
-function longestConsec(strArr, k) {
-    const conseString = [];
-    if (k === 1) {
-        const wordLengthArr = strArr.map((str) => str.length);
-        const maxWordLength = Math.max(...wordLengthArr);
-        const longestWord = strArr.find((word) => word.length === maxWordLength);
-        if (longestWord === undefined)
-            throw new Error("ERROR");
-        return longestWord;
-    }
-    const properLength = strArr.length - k;
-    for (let i = 0; i <= properLength; i++) {
-        console.log(i);
-    }
-    const maxConsecutiveString = Math.max(...conseString.map((str) => str.length));
-    const firstLongestString = conseString.find((str) => str.length === maxConsecutiveString);
-    console.log(conseString);
-    return firstLongestString;
-}
-const result = longestConsec(strArr, 3);
-console.log(result);
+const listOfArt = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"];
+const listOfCat = ["A", "B", "C", "D"];
+const stockList = (listOfArr, listOfCat) => {
+    return "siu";
+};
+const result = stockList(listOfArt, listOfCat);
 //# sourceMappingURL=app.js.map
