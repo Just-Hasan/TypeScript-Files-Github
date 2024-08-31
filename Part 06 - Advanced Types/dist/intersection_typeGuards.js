@@ -43,4 +43,4 @@ function useVehicle(vehicle) {
 }
 useVehicle(v1);
 useVehicle(v2);
-//# sourceMappingURL=intersection_discriminate_type.js.map
+//# sourceMappingURL=intersection_typeGuards.js.map

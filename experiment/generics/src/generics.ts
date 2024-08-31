@@ -6,6 +6,8 @@ function getFirstElement<ElementType>(numArr: ElementType[]) {
   return numArr[0];
 }
 
+function arr<Array>() {}
+
 const numbers = [1, 2, 3];
 const firstNum = getFirstElement(numbers);
 

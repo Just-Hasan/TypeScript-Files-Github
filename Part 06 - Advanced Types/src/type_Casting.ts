@@ -1,26 +1,24 @@
-// Type Casting using the as keyword
-const userInputElement = document.getElementById(
-  "user-input"
-) as HTMLInputElement;
+////////[Type Casting]
+// type casting digunakan untuk membantu / memberitau TypeScript bahwa kita telah menyeleksi element HTML tertentu, tanpa ini TypeScript akan bingung karena TypeScript tidak menelusuri file HTML yang kita miliki dan menganggap element yang kita seleksi ber-tipe HTMLElement | null seperti contoh dibawah ini
+const _paragraphElement = document.getElementById("message-output");
+const _userInputElement = document.getElementById("user-input");
 
-// Type Casting using the bracket
+// dengan menggunakan TypeScript, kita secara eksplisit memberitau TypeScript element HTML apa yang kita seleksi.
+
+// type casting bisa dilakukan dengan menambahkan notasi <HTMLElementSomething>
 const paragraphElement = <HTMLParagraphElement>(
   document.getElementById("message-output")
 );
 
-const button = <HTMLButtonElement>document.getElementById("btn");
+// dan bisa juga digunakan dengan keyword 'as' kemudian dilanjutkan dengan <HTMLElementSomething>
+const userInputElement = document.getElementById(
+  "user-input"
+) as HTMLInputElement;
 
-userInputElement.value = "";
-userInputElement.placeholder = "Siu";
-paragraphElement.textContent = "Pipiw";
-paragraphElement.style.textAlign = "center";
-
-button.textContent = "Click";
-button.style.width = "max-content";
-button.style.borderRadius = "299px";
-button.style.border = "none";
-button.style.marginTop = "16px";
-button.addEventListener(
-  "click",
-  () => (paragraphElement.textContent = userInputElement.value)
+const getUserInputBtn = <HTMLButtonElement>(
+  document.querySelector("#get-user-input")
 );
+
+getUserInputBtn.addEventListener("click", () => {
+  console.log(userInputElement.value);
+});
