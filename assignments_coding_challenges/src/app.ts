@@ -453,7 +453,6 @@ Problem-Solving structure :
 
       e. Splice the second smallest num from the arrayOfN
 
-*/
 
 function smallest(n: number): number[] | any {
   const arrayOfN = String(n)
@@ -509,3 +508,4 @@ console.log(result);
 //   .split("")
 //   .map((n) => Number(n));
 // console.log(test.lastIndexOf(2));
+*/
